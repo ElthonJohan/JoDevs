@@ -100,31 +100,27 @@
 <section id="trabajos" class="works-section">
   <div class="works-header">
     <span class="section-badge">PORTFOLIO</span>
-    <h2 class="section-title">Selected Works</h2>
+    <h2 class="section-title">Trabajos Seleccionados</h2>
     <p class="section-subtitle">
       Una muestra curada de soluciones digitales de alto rendimiento donde la precisión técnica 
       se encuentra con la creatividad, las herramientas para la próxima generación de la web.
     </p>
   </div>
 
-  <div class="works-container">
+  <div class="works-container" *ngFor="let project of projects" >
     <!-- Proyecto 1 -->
     <div class="work-item">
       <div class="work-number">
-        <span class="number">01</span>
+        <span class="number">{{project.number}}</span>
         <div class="number-line"></div>
       </div>
       <div class="work-content">
-        <h3 class="work-title">Vortex Analytics</h3>
-        <p class="work-description">
-          Motor de modelado de alto rendimiento para plataformas de trading de alta frecuencia.
-        </p>
-        <div class="work-tags">
-          <span class="tag">High-Frequency</span>
-          <span class="tag">Analytics</span>
-          <span class="tag">Real-time</span>
+        <h3 class="work-title">{{project.title}}</h3>
+        <p class="work-description">{{project.description}}</p>
+        <div class="work-tags" *ngFor="let tech of project.technologies">
+          <span class="tag">{{tech}}</span>
         </div>
-        <a href="#" class="work-link">
+        <a [routerLink]="['/works', project.id]" class="work-link">
           Ver proyecto <span class="arrow">→</span>
         </a>
       </div>
@@ -136,89 +132,6 @@
       </div>
     </div>
 
-    <!-- Proyecto 2 -->
-    <div class="work-item">
-      <div class="work-number">
-        <span class="number">02</span>
-        <div class="number-line"></div>
-      </div>
-      <div class="work-content">
-        <h3 class="work-title">Zerbit Health</h3>
-        <p class="work-description">
-          Salud sincronizada para datos personalizados y consejos de recuperación.
-        </p>
-        <div class="work-tags">
-          <span class="tag">HealthTech</span>
-          <span class="tag">Personalized</span>
-          <span class="tag">Data Sync</span>
-        </div>
-        <a href="#" class="work-link">
-          Ver proyecto <span class="arrow">→</span>
-        </a>
-      </div>
-      <div class="work-image-placeholder">
-        <div class="image-bg"></div>
-        <div class="image-overlay">
-          <mat-icon>health_and_safety</mat-icon>
-        </div>
-      </div>
-    </div>
-
-    <!-- Proyecto 3 -->
-    <div class="work-item">
-      <div class="work-number">
-        <span class="number">03</span>
-        <div class="number-line"></div>
-      </div>
-      <div class="work-content">
-        <h3 class="work-title">Aura StreamView</h3>
-        <p class="work-description">
-          Sistema de evaluación de datos de trading de alto rendimiento para la industria.
-        </p>
-        <div class="work-tags">
-          <span class="tag">Streaming</span>
-          <span class="tag">Data Analysis</span>
-          <span class="tag">High-Performance</span>
-        </div>
-        <a href="#" class="work-link">
-          Ver proyecto <span class="arrow">→</span>
-        </a>
-      </div>
-      <div class="work-image-placeholder">
-        <div class="image-bg"></div>
-        <div class="image-overlay">
-          <mat-icon>stream</mat-icon>
-        </div>
-      </div>
-    </div>
-
-    <!-- Proyecto 4 -->
-    <div class="work-item">
-      <div class="work-number">
-        <span class="number">04</span>
-        <div class="number-line"></div>
-      </div>
-      <div class="work-content">
-        <h3 class="work-title">Cipher Exchange</h3>
-        <p class="work-description">
-          Juego intelectual de trading descentralizado, plataforma moderna de trading de activos web.
-        </p>
-        <div class="work-tags">
-          <span class="tag">DeFi</span>
-          <span class="tag">Blockchain</span>
-          <span class="tag">Exchange</span>
-        </div>
-        <a href="#" class="work-link">
-          Ver proyecto <span class="arrow">→</span>
-        </a>
-      </div>
-      <div class="work-image-placeholder">
-        <div class="image-bg"></div>
-        <div class="image-overlay">
-          <mat-icon>currency_bitcoin</mat-icon>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- Call to Action -->
@@ -398,10 +311,18 @@
         <div class="social-links">
           <p class="label">Síguenos</p>
           <div class="social-icons">
-            <a href="#" class="social-icon">𝕏</a>
-            <a href="#" class="social-icon">in</a>
-            <a href="#" class="social-icon">IG</a>
-            <a href="#" class="social-icon">LI</a>
+            <a href="#" class="social-icon">
+              <img src="x.png" alt="">
+            </a>
+            <a href="#" class="social-icon">
+              <img src="instagramb.png" alt="">
+            </a>
+            <a href="#" class="social-icon">
+              <img src="whatsappb.png" alt="">
+            </a>
+            <a href="#" class="social-icon">
+              <img src="linkedinb.png"  alt="">
+            </a>
           </div>
         </div>
       </div>
@@ -425,23 +346,17 @@
         Construimos el futuro del código para visionarios tecnológicos.
       </p>
       <div class="footer-social">
-        <a href="#" class="social-icon" aria-label="GitHub">
+        <a href="https://github.com/ElthonJohan" class="social-icon" aria-label="GitHub">
           <mat-icon>code</mat-icon>
         </a>
-        <a href="#" class="social-icon" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/elthon-guevara-13865729a/" class="social-icon" aria-label="LinkedIn">
           <mat-icon>work</mat-icon>
-        </a>
-        <a href="#" class="social-icon" aria-label="Twitter">
-          <mat-icon>alternate_email</mat-icon>
         </a>
         <a href="#" class="social-icon" aria-label="Instagram">
           <mat-icon>photo_camera</mat-icon>
         </a>
         <a href="#" class="social-icon" aria-label="Discord">
           <mat-icon>gamepad</mat-icon>
-        </a>
-        <a href="#" class="social-icon" aria-label="YouTube">
-          <mat-icon>play_circle</mat-icon>
         </a>
       </div>
     </div>

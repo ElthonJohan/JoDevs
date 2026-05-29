@@ -1631,7 +1631,7 @@ S
 .social-icon {
   width: 50px;
   height: 50px;
-  background: rgba(255,255,255,0.05);
+  background: #00363A;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1645,6 +1645,11 @@ S
   background: #c026d3;
   color: white;
   transform: translateY(-4px);
+}
+
+.social-icon img{
+  width: 30px;
+  height: 30px;
 }
 
 /* ==================== RESPONSIVE ==================== */

@@ -105,6 +105,7 @@
 .features h2 {
   font-size: 42px;
   margin-bottom: 40px;
+  line-height: normal;
 }
 
 .feature-grid {
@@ -126,6 +127,98 @@
   border-color: #00ffff;
 }
 
+/* ====================== MOCKUP DEL TELÉFONO ====================== */
+
+.project-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 380px;           /* Tamaño ideal para mockup */
+  margin: 0 auto;
+  background: #111;
+  padding: 18px 14px 26px;
+  border-radius: 42px;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 8px #1a1a1a;
+  border: 8px solid #0a0a0a;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 28px;
+  aspect-ratio: 16 / 28;        /* Proporción más realista de celular */
+  background: #000;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* Llena todo el espacio */
+  object-position: center;
+  flex-shrink: 0;
+}
+
+/* Botones de navegación */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+/* Indicadores (dots) */
+.dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 20;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background: #fff;
+  width: 26px;
+  border-radius: 20px;
+}
 @media(max-width: 1000px){
 
   .project-detail{

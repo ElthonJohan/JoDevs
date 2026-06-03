@@ -3,6 +3,7 @@ import { NavbarComponent } from './component/navbar-component/navbar-component';
 import { HomeComponent } from './component/home-component/home-component';
 import { BlogComponent } from './component/blog-component/blog-component';
 import { WorksComponent } from './component/works-component/works-component';
+import { ServicesComponent } from './component/services-component/services-component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
       {
     path: 'works/:id',
     component: WorksComponent,
+  },
+  {
+    path:'services/:id',
+    component: ServicesComponent,
   }
     ],
   },

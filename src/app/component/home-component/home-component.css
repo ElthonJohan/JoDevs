@@ -485,14 +485,14 @@ S
 .card-icon-wrapper-movil {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, rgba(224, 0, 254, 0.15), rgba(254, 79, 231, 0.08));
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.08));
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.8rem;
   transition: all 0.3s ease;
-  border: 1px solid rgba(195, 0, 254, 0.2);
+  border: 1px solid rgba(0, 242, 254, 0.2);
 }
 
 .service-card-movil:hover .card-icon-wrapper-movil {

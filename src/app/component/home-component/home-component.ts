@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from "@angular/material/button";
+import { CdkAriaLive } from "../../../../node_modules/@angular/cdk/types/_a11y-module-chunk";
 
 @Component({
   selector: 'app-home-component',
@@ -27,6 +28,41 @@ export class HomeComponent implements OnInit, OnDestroy {
   loading = true;
   error = false;
   private intervalId: any;
+
+  services = [
+    {
+      id: 'desarrollo-web',
+      icon: 'code',
+      title: 'Desarrollo Web',
+      description: 'Desarrollo de aplicaciones web modernas y responsivas utilizando Angular, React, Django y más.',
+      features: [
+        'React',
+        'Node.js'
+      ]
+    },
+    {
+      id: 'app-movil',
+      icon: 'phone_iphone',
+      title: 'Desarrollo Móvil',
+      description: 'Desarrollo de aplicaciones móviles nativas e híbridas utilizando React Native, Flutter y más.',
+      features: [
+        'React Native',
+        'Flutter'
+      ]
+    },
+    {
+      id: 'design-web',
+      icon: 'palette',
+      title: 'Diseño Web',  
+      description: 'Diseño y desarrollo de interfaces web modernas y responsivas utilizando las últimas tecnologías.',
+      features: [
+        'Figma',
+        'Protipado',
+        'UI/UX'
+      ]
+    
+    }
+  ];
 
 
 

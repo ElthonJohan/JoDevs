@@ -37,61 +37,23 @@
 
   <div class="services-container">
     <!-- Card 1 - Desarrollo Web -->
-    <div class="service-card">
-      <div class="card-icon-wrapper">
-        <mat-icon class="service-icon">code</mat-icon>
-      </div>
-      <h3 class="service-title">Web Development</h3>
-      <p class="service-description">
-        Aplicaciones web ultra-rápidas construidas con arquitecturas modernas 
-        como Next.js y Go.
-      </p>
-      <div class="tech-badges">
-        <span class="badge">REACT</span>
-        <span class="badge">NODE.JS</span>
-      </div>
-      <a href="#" class="card-link">
-        Explorar <span class="arrow">→</span>
-      </a>
-    </div>
-
-    <!-- Card 2 - Desarrollo Móvil -->
-    <div class="service-card-movil">
+    <div class="service-card-movil" *ngFor="let service of services">
       <div class="card-icon-wrapper-movil">
-        <mat-icon class="service-icon-movil">phone_iphone</mat-icon>
+        <mat-icon class="service-icon">{{service.icon}}</mat-icon>
       </div>
-      <h3 class="service-title-movil">Mobile Apps</h3>
-      <p class="service-description-movil">
-        Experiencias nativas y multiplataforma que se sienten fluidas y 
-        responden instantáneamente.
+      <h3 class="service-title">{{service.title}}</h3>
+      <p class="service-description">
+        {{service.description}}
       </p>
-      <div class="tech-badges-movil">
-        <span class="badge-movil">FLUTTER</span>
-        <span class="badge-movil">SWIFT</span>
+      <div class="tech-badges">
+        <span class="badge" *ngFor="let feature of service.features">{{feature}}</span>
       </div>
-      <a href="#" class="card-link-movil">
+      <a [routerLink]="['/services', service.id]"  class="card-link">
         Explorar <span class="arrow">→</span>
       </a>
     </div>
 
-    <!-- Card 3 - UI/UX Design -->
-    <div class="service-card">
-      <div class="card-icon-wrapper">
-        <mat-icon class="service-icon">palette</mat-icon>
-      </div>
-      <h3 class="service-title">UI/UX Design</h3>
-      <p class="service-description">
-        Diseño minimalista enfocado en la funcionalidad y la jerarquía visual 
-        de alto impacto.
-      </p>
-      <div class="tech-badges">
-        <span class="badge">FIGMA</span>
-        <span class="badge">PROTOTYPING</span>
-      </div>
-      <a href="#" class="card-link">
-        Explorar <span class="arrow">→</span>
-      </a>
-    </div>
+    
   </div>
 </section>
 

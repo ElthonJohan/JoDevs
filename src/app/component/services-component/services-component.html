@@ -1,0 +1,152 @@
+<section class="service-detail">
+
+  <div class="container">
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+      <span class="badge">
+        Servicio Premium
+      </span>
+
+      <h1>
+        {{ service?.title }}
+      </h1>
+
+      <p class="subtitle">
+        {{ service?.subtitle }}
+      </p>
+
+      <p class="description">
+        {{ service?.longDescription }}
+      </p>
+
+    </div>
+
+    <!-- TECNOLOGÍAS -->
+
+    <div class="section">
+      <h2>Tecnologías</h2>
+
+      <div class="chips">
+        <span *ngFor="let tech of service?.technologies">
+          {{ tech }}
+        </span>
+      </div>
+    </div>
+
+    <!-- INCLUYE -->
+
+    <div class="section">
+
+      <h2>¿Qué incluye?</h2>
+
+      <div class="grid">
+
+        <div class="card"
+          *ngFor="let item of service?.includes">
+
+          <div class="card-icon">
+            ✓
+          </div>
+
+          <p>{{ item }}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BENEFICIOS -->
+
+    <div class="section">
+
+      <h2>Beneficios</h2>
+
+      <div class="benefits">
+
+        <div
+          class="benefit"
+          *ngFor="let benefit of service?.benefits">
+
+          <h3>{{ benefit }}</h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PROCESO -->
+
+    <div class="section">
+
+      <h2>Nuestro Proceso</h2>
+
+      <div class="process">
+
+        <div
+          class="step"
+          *ngFor="let step of service?.process; let i = index">
+
+          <div class="number">
+            0{{ i + 1 }}
+          </div>
+
+          <h3>{{ step }}</h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+
+    <div class="stats">
+
+      <div class="stat">
+        <h2>{{ service?.stats?.projects }}</h2>
+        <p>Proyectos</p>
+      </div>
+
+      <div class="stat">
+        <h2>{{ service?.stats?.satisfaction }}</h2>
+        <p>Satisfacción</p>
+      </div>
+
+      <div class="stat">
+        <h2>{{ service?.stats?.support }}</h2>
+        <p>Soporte</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+      <h2>
+        ¿Listo para impulsar tu proyecto?
+      </h2>
+
+      <p>
+        Creamos soluciones digitales modernas
+        para empresas y startups.
+      </p>
+
+      <a
+        href="https://wa.me/51922837138?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios"
+        class="btn btn-primary"
+        target="_blank"
+      >
+        Trabajemos Juntos →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

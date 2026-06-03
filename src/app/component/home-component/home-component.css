@@ -707,6 +707,7 @@ S
   color: #ffffff;
   margin-bottom: 1.2rem;
   letter-spacing: -0.02em;
+  line-height: 1;
 }
 
 .section-subtitle {
@@ -716,6 +717,7 @@ S
   margin: 0 auto;
   line-height: 1.7;
   font-weight: 400;
+  padding-top: 20px;
 }
 
 /* Contenedor de trabajos */

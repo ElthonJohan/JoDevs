@@ -3,7 +3,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import { MatAnchor, MatButtonModule } from "@angular/material/button";
+import { MatButtonModule } from "@angular/material/button";
 import emailjs from '@emailjs/browser';
 
 @Component({
@@ -11,7 +11,6 @@ import emailjs from '@emailjs/browser';
   imports: [
     CommonModule, MatIconModule,
     FormsModule,
-    MatAnchor,
     MatButtonModule
 ],  
   templateUrl: './home-component.html',

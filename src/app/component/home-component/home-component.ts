@@ -2,16 +2,26 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+<<<<<<< HEAD
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from "@angular/material/button";
+=======
+import { Router } from '@angular/router';
+import { MatButtonModule } from "@angular/material/button";
+import emailjs from '@emailjs/browser';
+>>>>>>> 988c8225dfb9a0b9dfba614e6cfa0dc2b8a7768d
 
 @Component({
   selector: 'app-home-component',
   imports: [
     CommonModule, MatIconModule,
     FormsModule,
+<<<<<<< HEAD
     MatButtonModule,
     RouterLink
+=======
+    MatButtonModule
+>>>>>>> 988c8225dfb9a0b9dfba614e6cfa0dc2b8a7768d
 ],  
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
@@ -116,16 +126,39 @@ export class HomeComponent implements OnInit, OnDestroy {
   };
 
   onSubmit() {
-    if (this.contactForm.name && this.contactForm.email && this.contactForm.message) {
-      console.log('Formulario enviado:', this.contactForm);
-      alert('✅ Mensaje enviado correctamente. ¡Nos pondremos en contacto pronto!');
-      
-      // Resetear formulario
-      this.contactForm = { name: '', email: '', phone: '', message: '' };
-    } else {
-      alert('Por favor completa los campos obligatorios.');
-    }
-  }
+
+  emailjs.send(
+    'service_v8t69b9',
+    'template_t9unew6',
+    {
+      from_name: this.contactForm.name,
+      from_email: this.contactForm.email,
+      phone: this.contactForm.phone,
+      message: this.contactForm.message
+    },
+    'uvWtB5LJDJmRsh32_'
+  )
+  .then(() => {
+
+    alert('Mensaje enviado correctamente');
+
+    this.contactForm = {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    };
+
+  })
+  .catch((error) => {
+
+    console.error(error);
+
+    alert('Error al enviar el mensaje');
+
+  });
+
+}
 
   ngOnInit(): void {
     this.intervalId = setInterval(() => {

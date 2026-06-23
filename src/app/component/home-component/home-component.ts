@@ -2,27 +2,17 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-<<<<<<< HEAD
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { MatButtonModule } from "@angular/material/button";
-=======
 import { Router } from '@angular/router';
 import { MatButtonModule } from "@angular/material/button";
 import emailjs from '@emailjs/browser';
->>>>>>> 988c8225dfb9a0b9dfba614e6cfa0dc2b8a7768d
 
 @Component({
   selector: 'app-home-component',
   imports: [
     CommonModule, MatIconModule,
     FormsModule,
-<<<<<<< HEAD
-    MatButtonModule,
-    RouterLink
-=======
     MatButtonModule
->>>>>>> 988c8225dfb9a0b9dfba614e6cfa0dc2b8a7768d
-],  
+  ],
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',
 })
@@ -43,7 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   projects = [
     {
       id: 'mrp-multialmacen',
-      number:"01",
+      number: "01",
       title: 'Sistema MRP Multialmacén',
       description: "Requerimientos y movimientos logísticos: Desarrollado con Streamlit + Python + SQLite y desplegado en PostgreSQL para producción.",
       technologies: ['MRP', 'Multialmacen', 'Logística'],
@@ -60,7 +50,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     {
       id: 'gestion-administrativa',
-      number:"02",
+      number: "02",
       title: 'Sistema de Gestión Administrativa',
       description: 'Matrículas, pagos y seguimiento académico: Desarrollado con Django REST Framework (backend) y React + Vite (frontend).',
       technologies: ['Django', 'React', 'PostgreSQL'],
@@ -75,10 +65,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       ]
     },
     {
-      id:'landing-page',
-      number:"03",
+      id: 'landing-page',
+      number: "03",
       title: 'Landing Page Jhonax',
-      description:'Confección textil al mercado digital: Desarrollada con Angular para mostrar servicios de confección de ropa de Jhonax. ',
+      description: 'Confección textil al mercado digital: Desarrollada con Angular para mostrar servicios de confección de ropa de Jhonax. ',
       technologies: ['Angular', 'Textil', 'Landing Page'],
       image: ['assets/projects/landing.jpg', 'assets/projects/landing2.jpg'],
       challenge: 'Centralizar matrículas y pagos.',
@@ -91,10 +81,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       ]
     },
     {
-      id:'tienda-virtual',
-      number:"04",
+      id: 'tienda-virtual',
+      number: "04",
       title: 'Tienda Virtual Leon’s',
-      description:'Uniformes deportivos online: Desarrollada con C# MVC para ampliar la venta presencial al canal digital.',
+      description: 'Uniformes deportivos online: Desarrollada con C# MVC para ampliar la venta presencial al canal digital.',
       technologies: ['C#', 'MVC', 'E-commerce'],
       image: ['assets/projects/landing.jpg', 'assets/projects/landing2.jpg'],
       challenge: 'Centralizar matrículas y pagos.',
@@ -110,13 +100,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   ];
 
- 
+
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
     private cdr: ChangeDetectorRef // Inyectamos el detector de cambios
-  ) {}
+  ) { }
 
   contactForm = {
     name: '',
@@ -127,38 +115,38 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onSubmit() {
 
-  emailjs.send(
-    'service_v8t69b9',
-    'template_t9unew6',
-    {
-      from_name: this.contactForm.name,
-      from_email: this.contactForm.email,
-      phone: this.contactForm.phone,
-      message: this.contactForm.message
-    },
-    'uvWtB5LJDJmRsh32_'
-  )
-  .then(() => {
+    emailjs.send(
+      'service_v8t69b9',
+      'template_t9unew6',
+      {
+        from_name: this.contactForm.name,
+        from_email: this.contactForm.email,
+        phone: this.contactForm.phone,
+        message: this.contactForm.message
+      },
+      'uvWtB5LJDJmRsh32_'
+    )
+      .then(() => {
 
-    alert('Mensaje enviado correctamente');
+        alert('Mensaje enviado correctamente');
 
-    this.contactForm = {
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    };
+        this.contactForm = {
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        };
 
-  })
-  .catch((error) => {
+      })
+      .catch((error) => {
 
-    console.error(error);
+        console.error(error);
 
-    alert('Error al enviar el mensaje');
+        alert('Error al enviar el mensaje');
 
-  });
+      });
 
-}
+  }
 
   ngOnInit(): void {
     this.intervalId = setInterval(() => {

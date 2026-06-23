@@ -2,18 +2,23 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-
+<<<<<<<<< Temporary merge branch 1
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from "@angular/material/button";
+=========
+import { Router } from '@angular/router';
+import { MatAnchor, MatButtonModule } from "@angular/material/button";
 import emailjs from '@emailjs/browser';
-
+>>>>>>>>> Temporary merge branch 2
 
 @Component({
   selector: 'app-home-component',
   imports: [
     CommonModule, MatIconModule,
     FormsModule,
+<<<<<<< HEAD
     MatButtonModule,
+    RouterLink
 ],  
   templateUrl: './home-component.html',
   styleUrl: './home-component.css',

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { MatAnchor, MatButtonModule } from "@angular/material/button";
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-home-component',
@@ -43,16 +44,39 @@ export class HomeComponent implements OnInit, OnDestroy {
   };
 
   onSubmit() {
-    if (this.contactForm.name && this.contactForm.email && this.contactForm.message) {
-      console.log('Formulario enviado:', this.contactForm);
-      alert('✅ Mensaje enviado correctamente. ¡Nos pondremos en contacto pronto!');
-      
-      // Resetear formulario
-      this.contactForm = { name: '', email: '', phone: '', message: '' };
-    } else {
-      alert('Por favor completa los campos obligatorios.');
-    }
-  }
+
+  emailjs.send(
+    'service_v8t69b9',
+    'template_t9unew6',
+    {
+      from_name: this.contactForm.name,
+      from_email: this.contactForm.email,
+      phone: this.contactForm.phone,
+      message: this.contactForm.message
+    },
+    'uvWtB5LJDJmRsh32_'
+  )
+  .then(() => {
+
+    alert('Mensaje enviado correctamente');
+
+    this.contactForm = {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    };
+
+  })
+  .catch((error) => {
+
+    console.error(error);
+
+    alert('Error al enviar el mensaje');
+
+  });
+
+}
 
   ngOnInit(): void {
     this.intervalId = setInterval(() => {

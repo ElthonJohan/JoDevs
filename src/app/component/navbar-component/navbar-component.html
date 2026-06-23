@@ -24,10 +24,10 @@
     <!-- Acciones derecha - Siempre visibles pero diferentes en móvil/desktop -->
     <div class="actions-section">
       <!-- Botón CONTACT - Solo visible en desktop -->
-      <button mat-raised-button class="contact-button desktop-only">
+      <a mat-button routerLink="/" fragment="contacto" class="contact-button desktop-only">
         Start Project
         <mat-icon>arrow_forward</mat-icon>
-      </button>
+      </a>
 
       <!-- Botón Hamburguesa - Solo visible en móvil -->
       <button mat-icon-button class="hamburger-btn mobile-only" (click)="toggleMenu()">
@@ -46,7 +46,7 @@
       <a mat-button routerLink="/" fragment="contacto" (click)="closeMenu()">Contacto</a>
       <a mat-button routerLink="/blog" fragment="blog" (click)="closeMenu()">Blog</a>
 
-      <button mat-raised-button class="mobile-contact-btn" (click)="closeMenu()">Start Project</button>
+      <a mat-button routerLink="/" fragment="contacto" class="mobile-contact-btn" (click)="closeMenu()">Start Project</a>
     </div>
   </div>
 </mat-toolbar>

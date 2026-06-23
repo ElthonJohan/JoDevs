@@ -1,0 +1,68 @@
+<button class="chat-toggle" (click)="toggleChat()" [class.open]="isOpen">
+  @if (isOpen) {
+    <span class="material-icons toggle-icon">close</span>
+  } @else {
+    <span class="material-icons toggle-icon">smart_toy</span>
+  }
+</button>
+
+<div class="chat-container" [class.active]="isOpen">
+
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="avatar-container">
+        <span class="material-icons bot-avatar-icon">smart_toy</span>
+        <span class="status-dot-pulse"></span>
+      </div>
+      <div class="chat-header-text">
+        <span class="chat-bot-name">JoDevs Assistant</span>
+        <span class="chat-bot-status">En línea • Responde al instante</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-body" #chatBody>
+    @for(message of messages; track $index){
+      <div
+        class="message message-fade-in"
+        [class.user]="message.type === 'user'"
+        [class.bot]="message.type === 'bot'"
+      >
+        <div class="message-content">
+          {{ message.text }}
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="chat-options">
+    <button (click)="ask('web')">
+      <span class="material-icons button-icon">language</span> Página Web
+    </button>
+
+    <button (click)="ask('sistema')">
+      <span class="material-icons button-icon">settings</span> Sistema Web
+    </button>
+
+    <button (click)="ask('movil')">
+      <span class="material-icons button-icon">phone_android</span> App Móvil
+    </button>
+
+    <button (click)="ask('tecnologias')">
+      <span class="material-icons button-icon">terminal</span> Tecnologías
+    </button>
+
+    <button (click)="ask('contacto')">
+      <span class="material-icons button-icon">chat</span> Contacto
+    </button>
+  </div>
+
+  <a
+    href="https://wa.me/51922837138?text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios"
+    target="_blank"
+    class="whatsapp-btn"
+  >
+    <i class="fab fa-whatsapp"></i> Solicitar Cotización
+  </a>
+
+</div>

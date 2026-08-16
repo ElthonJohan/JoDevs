@@ -1,26 +1,49 @@
 <div class="home-container">
 
-<!-- Hero Slider -->
-<section id="hero" class="hero-slider">
-  <div class="slides-container">
-    <div class="slide" 
-         *ngFor="let img of heroImages; let i = index"
-         [class.active]="i === currentImage">
-      <img [src]="img" class="hero-img" alt="jodevs">
-    </div>
-  </div>
-
-  <div class="hero-overlay">
-    <div class="overlay-content">
-      <h3 class="hero-info">DEV STARTUP EXCELLENCE</h3>
+  <!-- Hero Slider -->
+  <section id="hero" class="hero-slider">
+    <!-- Slider Background -->
+    <div class="slides-container">
+      <div 
+        class="slide" 
+        *ngFor="let img of heroImages; let i = index"
+        [class.active]="i === currentImage">
+        <img [src]="img" class="hero-img" alt="jodevs hero background">
       </div>
-    <h1 class="hero-title">Tranformamos tus ideas en <span class="highlight">experiencias digitales</span></h1>
-    <p class="hero-subtitle">Ingeniería de software de alto rendimiento fusionada con una estética técnica quirúrgica. 
-        Construimos el futuro del código para visionarios tecnológicos.</p>
-    <a href="#trabajos" class="btn-proyectos">Ver Proyectos</a>
-    <a href="#contacto" class="btn-contacto">Contáctanos</a>
-  </div>
-</section>
+    </div>
+
+    <!-- Background Glow Gradient Overlay -->
+    <div class="hero-overlay">
+      <div class="hero-content">
+        
+        <!-- Badge con punto indicador tipo status -->
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">HIGH-PERFORMANCE ENGINEERING</span>
+        </div>
+
+        <h1 class="hero-title">
+          Arquitectamos el <span class="highlight-purple">Futuro</span> <span class="highlight-cyan">Digital</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Construimos soluciones web y móviles escalables para empresas que exigen excelencia técnica. 
+          Código limpio, diseño estratégico y rendimiento absoluto.
+        </p>
+
+        <!-- Botones de Acción -->
+        <div class="hero-actions">
+          <a href="#contacto" class="btn-primary">
+            INICIAR PROYECTO <span>→</span>
+          </a>
+          <a href="#trabajos" class="btn-secondary">
+            VER PORTAFOLIO
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
 
@@ -57,7 +80,6 @@
   </div>
 </section>
 
-<!--Trabajos -->
 <!-- Sección de Trabajos Destacados -->
 <section id="trabajos" class="works-section">
   <div class="works-header">
@@ -69,31 +91,40 @@
     </p>
   </div>
 
-  <div class="works-container" *ngFor="let project of projects" >
-    <!-- Proyecto 1 -->
-    <div class="work-item">
+  <div class="works-container">
+    <!-- Item Proyecto -->
+    <div class="work-item" *ngFor="let project of projects">
+      
+      <!-- Número lateral / índice -->
       <div class="work-number">
-        <span class="number">{{project.number}}</span>
+        <span class="number">{{ project.number || '01' }}</span>
         <div class="number-line"></div>
       </div>
+
+      <!-- Contenido textual -->
       <div class="work-content">
-        <h3 class="work-title">{{project.title}}</h3>
-        <p class="work-description">{{project.description}}</p>
-        <div class="work-tags" *ngFor="let tech of project.technologies">
-          <span class="tag">{{tech}}</span>
+        <h3 class="work-title">{{ project.title }}</h3>
+        <p class="work-description">{{ project.description }}</p>
+        
+        <!-- Lista de tecnologías -->
+        <div class="work-tags">
+          <span class="tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
         </div>
+
         <a [routerLink]="['/works', project.id]" class="work-link">
           Ver proyecto <span class="arrow">→</span>
         </a>
       </div>
+
+      <!-- Mockup / Placeholder Visual -->
       <div class="work-image-placeholder">
         <div class="image-bg"></div>
         <div class="image-overlay">
           <mat-icon>analytics</mat-icon>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 
   <!-- Call to Action -->
@@ -104,10 +135,11 @@
         Actualmente estamos aceptando nuevas propuestas para el próximo ciclo. 
         Hablemos sobre tus necesidades técnicas.
       </p>
-      <!-- <div class="cta-buttons">
-        <a href="#" class="btn-primary">Enviar Propuesta</a>
-        <a href="#" class="btn-secondary">Ver Planes</a>
-      </div> -->
+      <div class="cta-buttons">
+        <a href="#contacto" class="btn-primary">
+          Enviar Propuesta <span>→</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
